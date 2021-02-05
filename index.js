@@ -1,47 +1,47 @@
-// complete the function
-function palindrom(str) {
-  // use Regex to select only alphabets, and numbers
-  const regex = /[^A-Za-z0-9]/g;
-  //convert string to lowercase and apply regular expression
-  const strToLowerCase = str.toLowerCase().replace(replace)
-  //spill str by each character and 
-  //use the reverse funtion to reverse the array and 
-  const reverseStr = strToLowerCase.spilt('').reverseStr
-  console.log(reverseStr);
-  return reverseStr === strToLowerCase;
-}
+const { solution } = require("../src");
 
-function solution(arg) {
-  return palindrom(arg);
-}
+describe("Sample Test", () => {
+  it("Test string uppercase", () => {
+    const output = "foo".toUpperCase();
+    const expected = "FOO";
+    expect(output).toStrictEqual(expected);
+  });
+});
 
-if (typeof require !== "undefined" && require.main === module) {
-  if (process.argv.length <= 2) {
-    throw Error("Require argument");
-  }
+describe("Test solutions", () => {
+  it("Testcase 0", () => {
+    const input = "madam";
+    const output = solution(input);
+    expect(output).toStrictEqual(true);
+  });
 
-  const arg = process.argv[2];
-  console.log(solution(arg));
-}
-//test the funtion
-console.log(solution('A man, a plan, a canel, panama'));
-//export the funtion as a module
-module.exports={solution }
+  it("Testcase 1", () => {
+    const input = "random string";
+    const output = solution(input);
+    expect(output).toStrictEqual(false);
+  });
 
-module.exports = { solution };
+  it("Testcase 2", () => {
+    const input = "satanoscillatemymetallicsonatas";
+    const output = solution(input);
+    expect(output).toStrictEqual(true);
+  });
 
+  it("Testcase 3", () => {
+    const input = "in girum imus nocte et consumimur igni";
+    const output = solution(input);
+    expect(output).toStrictEqual(true);
+  });
 
-const solution = require();
+  it("Testcase 4", () => {
+    const input = "lmaoml";
+    const output = solution(input);
+    expect(output).toStrictEqual(false);
+  });
 
-const check = solution('A man, a plan, a canel, Panama');
-
-console,log(check);
-
-
-
-
-
-
-
-
-
+  it("Testcase 5", () => {
+    const input = "wassamassaw";
+    const output = solution(input);
+    expect(output).toStrictEqual(true);
+  });
+});
